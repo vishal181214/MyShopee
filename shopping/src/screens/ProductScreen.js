@@ -74,8 +74,8 @@ function ProductScreen() {
     <div>
       <Row>
         <Col md={6}>
-          <img
-            className="img-large"
+          <img 
+            style={{width:"30vw",height:"50vh"}}
             src={product.image}
             alt={product.name}
           ></img>
@@ -127,7 +127,7 @@ function ProductScreen() {
                 {product.countInStock > 0 && (
                   <ListGroup.Item>
                     <div className="d-grid">
-                      <Button onClick={addToCartHandler} variant="primary">
+                      <Button style={{textDecoration:"none",border:"none"}} onClick={addToCartHandler} variant="primary">
                         Add to Cart
                       </Button>
                     </div>

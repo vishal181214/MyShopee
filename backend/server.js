@@ -5,10 +5,12 @@ import seedRouter from './routes/seedRoutes.js';
 import productRouter from './routes/productRoutes.js';
 import userRouter from './routes/userRoutes.js';
 import orderRouter from './routes/orderRoutes.js';
+import cors from 'cors';
 const app = express();
+
+app.use(cors())
 mongoose.set('strictQuery', true);
-mongoose
-  .connect(`mongodb://localhost:27017/Amazona`)
+mongoose.connect('mongodb+srv://vishalgai:UKkUknD3ztBhSxdV@cluster0.apnmfbt.mongodb.net/myshopee?retryWrites=true&w=majority',{ useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log('connected to db');
   })

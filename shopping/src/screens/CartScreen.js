@@ -110,7 +110,8 @@ export default function CartScreen() {
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <div className="d-grid">
-                    <Button
+                    <Button 
+                    style={{textDecoration:"none",border:"none"}}
                       type="button"
                       variant="primary"
                       onClick={checkoutHandler}
