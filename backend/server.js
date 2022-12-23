@@ -1,11 +1,11 @@
 import express from 'express';
-import data from './data.js';
 import mongoose from 'mongoose';
 import seedRouter from './routes/seedRoutes.js';
 import productRouter from './routes/productRoutes.js';
 import userRouter from './routes/userRoutes.js';
 import orderRouter from './routes/orderRoutes.js';
 import cors from 'cors';
+import data from "dotenv"
 const app = express();
 
 app.use(cors())
@@ -23,7 +23,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get(`/api/keys/paypal`,(req,res)=>{
-  res.send(process.env.PAYPAL_CLIENT_ID || 'sb')  // sb for sandbox
+  res.send(data.PAYPAL_CLIENT_ID || 'sb')  // sb for sandbox
 });
 
 app.use('/api/seed', seedRouter);
@@ -38,5 +38,5 @@ app.use((err, req, res, next) => {
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
-  console.log(`serve at http://localhost:${port}`);
+  console.log(`started at http://localhost:${port}`);
 });

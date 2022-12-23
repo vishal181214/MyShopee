@@ -29,7 +29,7 @@ export default function SignupScreen() {
       return;
     }
     try {
-      const { data } = await Axios.post('/api/users/signup', {
+      const { data } = await Axios.post('https://busy-jade-reindeer-gear.cyclic.app/api/users/signup', {
         name,
         email,
         password,
@@ -85,7 +85,7 @@ export default function SignupScreen() {
           </Form.Group>
         </Form.Group>
         <div className="mb-3">
-          <Button type="submit">Sign Up</Button>
+          <Button type="submit" style={{textDecoration:"none",border:"none"}}>Sign Up</Button>
         </div>
         <div className="mb-3">
           Already have an account?{' '}

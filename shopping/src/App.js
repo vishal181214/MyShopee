@@ -9,7 +9,7 @@ import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Container from 'react-bootstrap/Container';
 import { LinkContainer } from 'react-router-bootstrap';
-import { useContext } from 'react';
+import { useContext, } from 'react';
 import { Store } from './Store';
 import CartScreen from './screens/CartScreen';
 import SigninScreen from './screens/SigninScreen';
@@ -33,6 +33,7 @@ function App() {
     localStorage.removeItem('paymentMethod');
     window.location.href = '/signin';
   };
+ 
   return (
     <BrowserRouter>
       <div className="d-flex flex-column site-container">
@@ -82,22 +83,15 @@ function App() {
               <Route path="/signup" element={<SignupScreen />} />
               <Route path="/profile" element={<ProfileScreen />} />
               <Route path="/placeorder" element={<PlaceOrderScreen />} />
-              <Route path="/order/:id" element={<OrderScreen />}></Route>
-              <Route
-                path="/orderhistory"
-                element={<OrderHistoryScreen />}
-              ></Route>
-              <Route
-                path="/shipping"
-                element={<ShippingAddressScreen />}
-              ></Route>
-              <Route path="/payment" element={<PaymentMethodScreen />}></Route>
+              <Route path="/order/:id" element={<OrderScreen />}/>
+              <Route path="/orderhistory" element={<OrderHistoryScreen />}/>
+              <Route path="/shipping" element={<ShippingAddressScreen />}/>
+              <Route path="/payment" element={<PaymentMethodScreen />}/>
               <Route path="/" element={<HomeScreen />} />
             </Routes>
           </Container>
         </main>
         <footer>
-          {/* <div className="text-center">All rights reserved</div> */}
           <FooterScreen/>
         </footer>
       </div>

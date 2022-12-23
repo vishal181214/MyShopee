@@ -50,7 +50,7 @@ export default function PlaceOrderScreen() {
       dispatch({ type: 'CREATE_REQUEST' });
 
       const { data } = await Axios.post(
-        '/api/orders',
+        'https://busy-jade-reindeer-gear.cyclic.app/api/orders',
         {
           orderItems: cart.cartItems,
           shippingAddress: cart.shippingAddress,
@@ -176,7 +176,7 @@ export default function PlaceOrderScreen() {
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <div className="d-grid">
-                    <Button
+                    <Button style={{textDecoration:"none",border:"none"}}
                       type="button"
                       onClick={placeOrderHandler}
                       disabled={cart.cartItems.length === 0}

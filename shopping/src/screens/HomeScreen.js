@@ -33,7 +33,7 @@ function HomeScreen() {
     const fetchData = async () => {
       dispatch({ type: 'FETCH_REQUEST' });
       try {
-        const result = await axios.get('/api/products');
+        const result = await axios.get('https://busy-jade-reindeer-gear.cyclic.app/api/products');
         dispatch({ type: 'FETCH_SUCCESS', payload: result.data });
       } catch (err) {
         dispatch({ type: 'FETCH_FAIL', payload: err.message });
@@ -48,7 +48,7 @@ function HomeScreen() {
       <Helmet>
         <title>MyShopee</title>
       </Helmet>
-      <h4>Featured Products</h4>
+      
       <div className="products">
         {loading ? (
           <LoadingBox />

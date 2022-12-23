@@ -97,7 +97,7 @@ export default function ShippingAddressScreen() {
             />
           </Form.Group>
           <div className="mb-3">
-            <Button variant="primary" type="submit">
+            <Button variant="primary" type="submit" style={{textDecoration:"none",border:"none"}}>
               Continue
             </Button>
           </div>

@@ -23,7 +23,7 @@ export default function SigninScreen() {
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await Axios.post('/api/users/signin', {
+      const { data } = await Axios.post('https://busy-jade-reindeer-gear.cyclic.app/api/users/signin', {
         email,
         password,
       });
@@ -65,11 +65,11 @@ export default function SigninScreen() {
           />
         </Form.Group>
         <div className="mb-3">
-          <Button type="submit">Sign In</Button>
+          <Button type="submit" style={{textDecoration:"none",border:"none"}}>Sign In</Button>
         </div>
         <div className="mb-3">
           New customer?{' '}
-          <Link to={`/signup?redirect=${redirect}`}>Create your account</Link>
+          <Link to={`/signup?redirect=${redirect}`} >Create your account</Link>
         </div>
       </Form>
     </Container>
